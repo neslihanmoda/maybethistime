@@ -1,23 +1,97 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Atölye</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AFTERIMAGE — A Digital Fashion & Culture Magazine</title>
+  <meta name="description" content="AFTERIMAGE — fashion, art, photography and contemporary culture magazine.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <a class="brand" href="#/">ATÖLYE</a>
-  <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menü</button>
-  <nav id="nav"></nav>
-  <form id="sf" role="search">
-    <input id="q" type="search" placeholder="Ara" aria-label="Ara">
-    <button type="submit">Ara</button>
-  </form>
-</header>
-<main id="app"></main>
-<footer>© 2026 Atölye. Tüm hakları saklıdır.</footer>
-<script src="script.js"></script>
+  <div class="announce" role="region" aria-label="announcement">
+    <a href="#/issue/001"><strong>ISSUE 001</strong> — THE NEW IMAGE CULTURE — <span>EXPLORE THE ISSUE</span></a>
+  </div>
+  <header class="site-header" role="banner">
+    <div class="masthead">
+      <a class="wordmark" href="#/">AFTERIMAGE</a>
+      <nav class="main-nav" role="navigation" aria-label="main navigation">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList">Menu</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="#/category/Fashion">FASHION</a></li>
+          <li><a href="#/category/Art">ART</a></li>
+          <li><a href="#/category/Culture">CULTURE</a></li>
+          <li><a href="#/category/People">PEOPLE</a></li>
+          <li><a href="#/category/Film">FILM</a></li>
+          <li><a href="#/category/Beauty">BEAUTY</a></li>
+          <li><a href="#/category/Opinion">OPINION</a></li>
+          <li><a href="#/about">ABOUT</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button id="searchOpen" aria-controls="search" aria-expanded="false" aria-label="Open search">🔍</button>
+        <a class="issue-link" href="#/issue/001">Issue</a>
+        <a class="newsletter-link" href="#newsletter">Newsletter</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="root" class="site-main" role="main"></main>
+
+  <div id="search" class="search-overlay" aria-hidden="true">
+    <div class="search-panel">
+      <form id="searchForm" role="search">
+        <label for="q" class="visually-hidden">Search articles</label>
+        <input id="q" name="q" type="search" placeholder="Search titles, categories, tags..." autocomplete="off">
+        <button type="submit">Search</button>
+        <button type="button" id="searchClose" aria-label="Close search">Close</button>
+      </form>
+      <div id="searchResults" class="search-results" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <aside id="newsletter" class="newsletter-panel" aria-hidden="true">
+    <div class="newsletter-inner">
+      <h3>LET SOMETHING STAY WITH YOU.</h3>
+      <p>Stories, images, and ideas worth returning to. Delivered occasionally.</p>
+      <form id="newsletterForm">
+        <label for="email" class="visually-hidden">Email address</label>
+        <input id="email" type="email" placeholder="you@domain.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="privacy-note">This is a demo. Subscriptions are not stored. To enable mailing, connect an email provider in the code.</p>
+      <button id="newsletterClose" class="close">Close</button>
+    </div>
+  </aside>
+
+  <button id="backTop" class="back-top" aria-label="Back to top">↑</button>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="wordmark">AFTERIMAGE</div>
+        <p class="statement">An independent magazine of fashion, art and image culture.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#/category/Fashion">Fashion</a>
+        <a href="#/category/Art">Art</a>
+        <a href="#/category/Culture">Culture</a>
+        <a href="#/about">About</a>
+        <a href="#/privacy">Privacy</a>
+      </nav>
+      <div class="footer-meta">
+        <a href="#newsletter">Newsletter</a>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">X</a>
+        </div>
+        <div class="copyright">© <span id="year"></span> AFTERIMAGE. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js" type="module"></script>
 </body>
 </html>
